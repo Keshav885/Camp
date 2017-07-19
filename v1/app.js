@@ -22,8 +22,8 @@ app.post("/campgrounds", function(req, res){
     
 });
 
-app.get("/campgrounds/new/", function(){
-    res.render("")
+app.get("/campgrounds/new", function(req, res){
+    res.render("new.ejs");
 });
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Camping app started");
