@@ -16,6 +16,14 @@ app.get("/campgrounds", function(req, res){
     ]
     res.render("campgrounds", {campgrounds: campgrounds});
 })
+
+app.post("/campgrounds", function(req, res){
+    
+});
+
+app.get("/campgrounds/new/", function(){
+    res.render("")
+});
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Camping app started");
 });
