@@ -24,7 +24,7 @@ app.post("/campgrounds", function(req, res){
     var image= req.body.image;
     var newCamp = {name: name, image:image};
     campgrounds.push(newCamp);
-    res.send("This is post route");
+    res.redirect("/campgrounds");
 });
 
 app.get("/campgrounds/new", function(req, res){
