@@ -2,22 +2,26 @@
 
 <div class="container">
     <header class="jumbotron">
-        <h1>This is the Campgrounds Page</h1>    
-        <p>Check out more for best camping experience</p>
-         <p>
-            <a class="btn btn-primary btn-lrg" href="/campgrounds/new">Add new Campground</a> 
-         </p>
-            
+        <div class="container">
+            <h1>This is the Campgrounds Page</h1>    
+            <p>Check out more for best camping experience</p>
+            <p>
+                <a class="btn btn-primary btn-lrg" href="/campgrounds/new">Add new Campground</a> 
+            </p>
+         </div>
     </header>
     
-    
-
-    <% campgrounds.forEach(function(camps){ %>
-        <div>
-            <h4><%= camps.name %></h4>
-            <img style="width: 300px" src="<%= camps.image %>">
-        </div>
-    <% }); %>   
+    <div class="row">
+        <h3>Populor Grounds</h3>
+        <% campgrounds.forEach(function(camps){ %>
+            <div class=" col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img style="width: 300px" src="<%= camps.image %>">
+                </div>
+                <h4><%= camps.name %></h4>
+            </div>
+        <% }); %> 
+    </div>
 </div>
 
 
