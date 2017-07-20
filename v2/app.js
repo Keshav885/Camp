@@ -22,6 +22,22 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
+Campground.create(
+    {
+        name: "Salmon Creek", 
+        image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"
+    }, function(err, campground){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Newly created");
+            console.log(campground);
+        }
+    }
+    
+);
+
 var campgrounds =[
     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
     {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz5nZMMmnTxqmLfspsmxVsp50ObmEXWlpxZGHielnzhu1chfG79A"},
