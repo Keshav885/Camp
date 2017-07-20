@@ -70,10 +70,9 @@ app.post("/campgrounds", function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render("campgrounds", {campgrounds: allCampgrounds});
+            res.redirect("/campgrounds");
         }        
     });
-    res.redirect("/campgrounds");
 });
 
 app.get("/campgrounds/new", function(req, res){
