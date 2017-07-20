@@ -12,8 +12,9 @@
     </header>
     
     <div class="row">
-        <h3>Populor Grounds</h3>
-        <% campgrounds.forEach(function(camps){ %>
+        <div class="container">
+            <h3>Popular Grounds</h3>
+            <% campgrounds.forEach(function(camps){ %>
             <div class=" col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="<%= camps.image %>">
@@ -21,6 +22,7 @@
                 <h4><%= camps.name %></h4>
             </div>
         <% }); %> 
+        </div>    
     </div>
 </div>
 
