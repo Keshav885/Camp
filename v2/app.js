@@ -4,12 +4,10 @@ var express =require("express"),
     mongoose =require("mongoose");
     
 mongoose.Promise = global.Promise;
-
 mongoose.connect("mongodb://localhost/Camp", { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
 app.get("/", function(req, res){
     res.render("landing");
 });
