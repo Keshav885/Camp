@@ -17,7 +17,8 @@ app.get("/", function(req, res){
 
 var campgroundSchema = new mongoose.Schema({
     name: "String",
-    image: "String"
+    image: "String",
+    description: "String"
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
@@ -36,7 +37,8 @@ app.get("/campgrounds", function(req, res){
 app.post("/campgrounds", function(req, res){
     var name=  req.body.name;
     var image= req.body.image;
-    var newCamp = {name: name, image:image};
+    var desc = req.body.description;
+    var newCamp = {name: name, image:image, description:desc};
     //Create a new campground and add it to db
     Campground.create(newCamp, function(err, newlyCreated){
         if(err){
