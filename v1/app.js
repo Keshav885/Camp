@@ -11,13 +11,13 @@ app.get("/", function(req, res){
 
 var campgrounds =[
     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
-    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5Zmjo-LGRHMgu8s0dFvabRy2VQmbXlP_ZbWZQJ6LhzJn_q15"},
+    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bxMy3uo5747jG1j29T5KwDHJaoFuk3uzPZh0nd0WBEzVn51Acw"},
     {name: "Green Mont", image:"http://bustedwallet.com/wp-content/uploads/2014/05/Camping-Near-The-Lake-Background-Wallpaper.jpg"},
     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
-    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5Zmjo-LGRHMgu8s0dFvabRy2VQmbXlP_ZbWZQJ6LhzJn_q15"},
+    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bxMy3uo5747jG1j29T5KwDHJaoFuk3uzPZh0nd0WBEzVn51Acw"},
     {name: "Green Mont", image:"http://bustedwallet.com/wp-content/uploads/2014/05/Camping-Near-The-Lake-Background-Wallpaper.jpg"},
     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
-    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5Zmjo-LGRHMgu8s0dFvabRy2VQmbXlP_ZbWZQJ6LhzJn_q15"},
+    {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bxMy3uo5747jG1j29T5KwDHJaoFuk3uzPZh0nd0WBEzVn51Acw"},
     {name: "Green Mont", image:"http://bustedwallet.com/wp-content/uploads/2014/05/Camping-Near-The-Lake-Background-Wallpaper.jpg"}
 ];
 
