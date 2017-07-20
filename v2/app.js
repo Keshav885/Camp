@@ -22,22 +22,22 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-    {
-        name:"Galapagus", 
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz5nZMMmnTxqmLfspsmxVsp50ObmEXWlpxZGHielnzhu1chfG79A"
+// Campground.create(
+//     {
+//         name:"Galapagus", 
+//         image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz5nZMMmnTxqmLfspsmxVsp50ObmEXWlpxZGHielnzhu1chfG79A"
         
-    }, function(err, campground){
-        if(err){
-            console.log(err);
-        }
-        else{
-            console.log("Newly created");
-            console.log(campground);
-        }
-    }
+//     }, function(err, campground){
+//         if(err){
+//             console.log(err);
+//         }
+//         else{
+//             console.log("Newly created");
+//             console.log(campground);
+//         }
+//     }
     
-);
+// );
 
 // var campgrounds =[
 //     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
@@ -50,8 +50,6 @@ Campground.create(
 //     {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz5nZMMmnTxqmLfspsmxVsp50ObmEXWlpxZGHielnzhu1chfG79A"},
 //     {name: "Green Mont", image:"http://bustedwallet.com/wp-content/uploads/2014/05/Camping-Near-The-Lake-Background-Wallpaper.jpg"}
 // ];
-
-
 
 app.get("/campgrounds", function(req, res){
     Campground.find({}, function(err, allCampgrounds){
@@ -67,8 +65,14 @@ app.post("/campgrounds", function(req, res){
     var name=  req.body.name;
     var image= req.body.image;
     var newCamp = {name: name, image:image};
-    campgrounds.push(newCamp);
-    res.redirect("/campgrounds");
+    //Create a new campground and add it to db
+    Campground.create(newCamp, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/campgrounds");
+        }        
+    });
 });
 
 app.get("/campgrounds/new", function(req, res){
