@@ -2,18 +2,22 @@
 
 <div class="container">
     <div class="row">
-        
+        <h1 style="text-align:center">Create a new Campground</h1>    
+        <div style="width: 30%; margin: 30px auto;">
+            <form action= "/campgrounds" method="POST">
+                <div class="from-group">
+                    <input class="form-control" type="text" placeholder="name" name="name">
+                </div>
+                <div class="from-group">
+                    <input class="form-control" type="text" placeholder="image url" name="image">
+                </div>
+                <div class="from-group">
+                    <input class="btn btn-lg btn-primary" type="submit">
+                </div>
+            </form>
+        </div>
+        <a href="/campgrounds">Back to Campgrounds</a>
     </div>
-    <header>
-        <h1>Create a new Campground</h1>    
-    </header>
-    <form action= "/campgrounds" method="POST">
-        <input class="form-control" type="text" placeholder="name" name="name">
-        <input class="form-control" type="text" placeholder="image url" name="image">
-        <input class="btn btn-lg btn-primary" type="submit">
-    </form>
-    <a href="/campgrounds">Back to Campgrounds</a>
-    
 </div>
 
 <% include partials/footer %>
