@@ -12,6 +12,16 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+
+//SCHEMA SETUP
+
+var campgroundSchema = new mongoose.Schema({
+    name: "String",
+    image: "String"
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
+
 var campgrounds =[
     {name: "Salmon Creek", image:"https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg"},
     {name:"Galapagus", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz5nZMMmnTxqmLfspsmxVsp50ObmEXWlpxZGHielnzhu1chfG79A"},
