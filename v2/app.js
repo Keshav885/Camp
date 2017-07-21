@@ -8,10 +8,6 @@ mongoose.connect("mongodb://localhost/Camp", { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.get("/", function(req, res){
-    res.render("landing");
-});
-
 
 //SCHEMA SETUP
 
@@ -20,8 +16,13 @@ var campgroundSchema = new mongoose.Schema({
     image: "String",
     description: "String"
 });
-
 var Campground = mongoose.model("Campground", campgroundSchema);
+
+//CREATE ROUTE
+
+app.get("/", function(req, res){
+    res.render("landing");
+});
 
 
 app.get("/campgrounds", function(req, res){
@@ -48,6 +49,8 @@ app.post("/campgrounds", function(req, res){
         }        
     });
 });
+
+//FORM
 
 app.get("/campgrounds/new", function(req, res){
     res.render("new.ejs");
