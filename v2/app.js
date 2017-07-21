@@ -18,6 +18,22 @@ var campgroundSchema = new mongoose.Schema({
 });
 var Campground = mongoose.model("Campground", campgroundSchema);
 
+Campground.create(
+    {
+        name: "Salmon Creek",
+        image: "https://c2.staticflickr.com/4/3344/4576893185_8561c860d0_b.jpg",
+        description: "This is perfect place for a hangout"
+    },
+    function(err, campground){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Newly added camp grpund");
+            console.log(campground);
+        }
+    });
+
 //CREATE ROUTE
 
 app.get("/", function(req, res){
@@ -55,6 +71,11 @@ app.post("/campgrounds", function(req, res){
 app.get("/campgrounds/new", function(req, res){
     res.render("new.ejs");
 });
+
+app.get("/campgrounds/:id", function(req, res){
+   res.send("Soon will be view page"); 
+});
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Camping app started");
 });
