@@ -1,8 +1,7 @@
-var express         =require("express"),
-    app             = express(),
-    bodyParser      =require("body-parser"),
-    mongoose        =require("mongoose");
-    Campground      =require("./models/campground")
+var express =require("express"),
+    app = express(),
+    bodyParser =require("body-parser"),
+    mongoose =require("mongoose");
     
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/Camp", { useMongoClient: true });
