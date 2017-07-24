@@ -2,10 +2,10 @@
     width: 100%;
 }
 
-/*.thumbnail{*/
-/*    padding:0;*/
-/*}*/
+.thumbnail {
+    padding: 0;
+}
 
-.thumbnail .caption-full p{
-     padding: 9px;
+.thumbnail .caption-full {
+    padding: 9px;
 }
