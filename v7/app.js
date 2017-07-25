@@ -9,12 +9,12 @@ var express     = require("express"),
     User        = require("./models/user"),
     flash       = require("connect-flash"),
     methodOverride= require("method-override"),
-    seedDB      = require("./seeds")
+    seedDB      = require("./seeds");
     
 //requring routes
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes      = require("./routes/index")
+    indexRoutes      = require("./routes/index");
     
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/Camp", { useMongoClient: true }); 
@@ -39,6 +39,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
    res.locals.currentUser = req.user;
+   res.locals.error = req.flash("error");
+   res.locals.success = req.flash("success");
    next();
 });
 
