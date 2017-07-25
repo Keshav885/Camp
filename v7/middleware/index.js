@@ -10,7 +10,6 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
                req.flash("error", "Campground not found");
                res.redirect("back");
            }  else {
-               // does user own the campground?
             if(foundCampground.author.id.equals(req.user._id)) {
                 next();
             } else {
@@ -49,7 +48,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash("error", "First!! You need to be logged in to do that");
+    req.flash("error", "First !! You need to be logged in");
     res.redirect("/login");
 };
 
