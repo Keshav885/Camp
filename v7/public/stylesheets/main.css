@@ -10,6 +10,15 @@
     padding: 9px;
 }
 
+.caption a{
+    text-decoration: none;
+    color: #000;
+}
+
+.caption a:hover{
+    color: #0077CC;
+}
+
 #delete-form{
     display: inline;
 }
