@@ -31,16 +31,16 @@ router.post("/register", function(req, res){
 //show login form
 router.get("/login", function(req, res){
    res.render("login");
-   req.flash("success", "You Logged out!");
+   
 });
-
+var message= "Welcome back!! ";
 //handling login logic
-router.post("/login", passport.authenticate("local", 
-    {
-        successRedirect: "/campgrounds",
-        failureRedirect: "/login"
-    }), function(req, res){
-});
+router.post("/login", passport.authenticate("local", {
+    successRedirect: "/campgrounds",
+    failureRedirect: "/login",
+    successFlash: message,
+    failureFlash: "Login failed, you have entered incorrect credentials."
+}));
 
 // logout route
 router.get("/logout", function(req, res){
