@@ -31,10 +31,10 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
            if(err){
                res.redirect("back");
            }  else {
-               // does user own the comment?
             if(foundComment.author.id.equals(req.user._id)) {
                 next();
             } else {
+                req.flash("error", "You don't have permission to do that");
                 res.redirect("back");
             }
            }
