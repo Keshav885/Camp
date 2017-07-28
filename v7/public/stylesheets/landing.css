@@ -7,19 +7,25 @@ body {
   position: relative;
   text-align: center;
   padding-top: 25vh;
-  text-transform: uppercase;
 }
 
 #landing-header h1 {
   color: #fff;
+  text-align: center;
+  filter: drop-shadow(0.05em 0.05em black);
+}
+
+#landing-header a{
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
 }
 #landing-header a{
     margin-bottom: 20px;
 }
 
-.btn.btn-lg.btn-success:hover{
-
-  font-size: 25px;
+.btn.btn-lg.btn-success{
+  width:300px;
 }
 
 .slideshow { 

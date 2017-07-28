@@ -4,15 +4,18 @@ var Campground = require("../models/campground");
 var middleware = require("../middleware");
 
 
+var camps = Campground.find({});
+console.log(camps);
+
 //INDEX - show all campgrounds
 router.get("/", function(req, res){
     // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
-       if(err){
-           console.log(err);
-       } else {
+      if(err){
+          console.log(err);
+      } else {
           res.render("campgrounds/index",{campgrounds:allCampgrounds});
-       }
+      }
     });
 });
 
@@ -27,7 +30,6 @@ router.post("/",middleware.isLoggedIn, function(req, res){
         username: req.user.username
     };
     var newCampground = {name: name, image: image, description: desc, author: author};
-    // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
             
@@ -35,7 +37,6 @@ router.post("/",middleware.isLoggedIn, function(req, res){
             console.log(err);
         } else {
             req.flash("success", "Campground Added Successfully "+ req.user.username.toUpperCase())
-            //redirect back to campgrounds page
             res.redirect("/campgrounds");
         }
     });
@@ -46,7 +47,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
    res.render("campgrounds/new"); 
 });
 
-// SHOW - shows more info about one campground
+//SHOW - shows more info about one campground
 router.get("/:id", function(req, res){
     //find the campground with provided ID
     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
@@ -57,6 +58,7 @@ router.get("/:id", function(req, res){
         }
     });
 });
+
 
 // EDIT ROUTE
 

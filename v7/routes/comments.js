@@ -6,7 +6,6 @@ var middleware = require("../middleware");
 
 //NEW COMMENT FORM
 router.get("/new",middleware.isLoggedIn, function(req, res){
-    console.log(req.params.id);
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -57,7 +56,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
       if(err){
           res.redirect("back");
       } else {
-          req.flash("success", "Comment Updated Successfully");
+          req.flash("success", "Comment Updated successfully");
           res.redirect("/campgrounds/" + req.params.id );
       }
    });

@@ -10,16 +10,19 @@
              </p>
          </div>
      </header>
-     
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
         <% campgrounds.forEach(function(campground){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                   <img style="height: 180px" src="<%= campground.image %>">
+                   <a href="/campgrounds/<%= campground._id %>"><img style="height: 180px" src="<%= campground.image %>"></a>
                    <div class="caption">
                        <a href="/campgrounds/<%= campground._id %>"><h4><%= campground.name %></h4></a>
+                       <hr style="margin: 0">
                    </div>
+                   
                    <p>
+                       <em>Submmitted by:</em> <a href="/campgrounds/<%= campground._id %>" style="text-decoration:none"><h5><%= campground.author.username.toUpperCase() %></h5></a>
+                       <a href="/campgrounds/<%= campground._id %>" class="price"><h5>$ <%= campground.price %>/night</h5></a>
                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-xs btn-success">Details</a>
                    </p>
                 </div>

@@ -2,10 +2,22 @@ var express = require("express");
 var router  = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var Campground = require("../models/campground");
 
 //root route
 router.get("/", function(req, res){
     res.render("landing");
+});
+
+router.get("/viewall", function(req, res){
+    Campground.find({}, function(err, allCampgrounds){
+        if(err){
+            console.log(err);
+        }
+        else{
+          res.render("campgrounds/show2", {campgrounds: allCampgrounds});
+        }
+    });
 });
 
 // show register form
@@ -46,7 +58,7 @@ router.post("/login", passport.authenticate("local", {
 router.get("/logout", function(req, res){
    req.logout();
    req.flash("success", "You Logged out!");
-   res.redirect("/campgrounds");
+   res.redirect("/");
 });
 
 

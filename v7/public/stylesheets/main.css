@@ -1,3 +1,14 @@
+body{
+    background: #eee;
+    
+}
+
+.jumbotron{
+    background: #323232;
+    color: #fff;
+    margin-top: 70px;
+}
+
 .thumbnail img {
     width: 100%;
 }
@@ -15,10 +26,27 @@
     color: #000;
 }
 
+.price{
+    text-decoration: none;
+    color: #000;
+}
+
+.price:hover{
+    text-decoration: none;
+    color: #0077CC;
+}
+
 .caption a:hover{
     color: #0077CC;
 }
 
+.form-container{
+    margin-top: 100px;
+}
+
+.top-row{
+    margin-top: 100px;
+}
 #delete-form{
     display: inline;
 }
