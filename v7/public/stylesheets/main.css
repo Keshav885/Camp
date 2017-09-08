@@ -6,8 +6,26 @@ body{
 .jumbotron{
     background: #323232;
     color: #fff;
-    margin-top: 70px;
 }
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+div.flex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+div.flex .item {
+    min-width: 15em;
+    -webkit-flex: 1 1 15em; /* this */
+    flex: 1;
+} 
 
 .thumbnail img {
     width: 100%;
@@ -40,13 +58,6 @@ body{
     color: #0077CC;
 }
 
-.form-container{
-    margin-top: 100px;
-}
-
-.top-row{
-    margin-top: 100px;
-}
 #delete-form{
     display: inline;
 }
